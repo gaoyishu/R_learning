@@ -1,0 +1,8 @@
+library(ggplot2)
+filename <- "H3K4me3_R_Rep1_peaks.breath_sort.xls"
+my_data <- read.csv(filename, header=FALSE, sep=" ")
+head(my_data)
+names(my_data)[1:3] <- c("peak_name", "breadth", "enrichment")
+head(my_data)
+ggplot(my_data, aes(x=breadth, y=enrichment)) + geom_histogram()
+ggplot(my_data, aes(x=breadth)) + geom_histogram(binwidth=80, aes(fill=..count..))+ labs(x = "H3K4me3 breadth (bp)",y="Number of ChIP-seq peaks(Density of Distribution)")+ theme_bw(base_size = 15)
