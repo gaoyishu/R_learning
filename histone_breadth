@@ -6,3 +6,5 @@ names(my_data)[1:3] <- c("peak_name", "breadth", "enrichment")    #attribute the
 head(my_data)
 ggplot(my_data, aes(x=breadth)) + geom_histogram(binwidth=80, aes(fill=..count..))
     + labs(x = "H3K4me3 breadth (bp)",y="Number of ChIP-seq peaks(Density of Distribution)")+ theme_bw(base_size = 15)
+ggplot(my_data, aes(x=breadth)) + geom_histogram(binwidth=80, fill="lightblue")
+    + labs(x = "H3K4me3 breadth (bp)",y="Number of ChIP-seq peaks(Density of Distribution)")+ theme_bw(base_size = 15) + theme(panel.grid =element_blank())
