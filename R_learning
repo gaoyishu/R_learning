@@ -13,4 +13,11 @@ source("filename.R")    #load your script in your R console
 **ggplot2**   an inplementation of the Grammar of Graphics
 install.packages(ggplot2)
 # the basic plot : qplot
-#plot are made up of aesthetics(size, shape,color) and geoms(points, lines #objectives you ploted)
+# plot are made up of aesthetics(size, shape,color) and geoms(points, lines #objectives you ploted)
+
+
+
+
+** hierarchical clustering **
+dist function
+hclust function
