@@ -9,3 +9,31 @@
 #Tips: Every colume should contain one meaning. The group or class cannot be separated which should be concatenate in one colume.
                 gather() and spread() from the tidyr package. This is a newer interface to the reshape2 package.
                 melt() and dcast() from the reshape2 package.
+                #example
+                head(data)
+                     X    X0h   X2h   X4h   X6h   X8h  X10h  X12h  X14h  X16h  X18h  X20h  X22h  X24h  X27h  X30h
+                     CK-1  0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+                     CK-2 -0.006 0.053 0.052 0.055 0.059 0.063 0.058 0.052 0.052 0.051 0.055 0.049 0.049 0.050 0.053
+                     CK-3 -0.002 0.054 0.056 0.055 0.050 0.057 0.051 0.053 0.059 0.058 0.053 0.050 0.049 0.053 0.050
+                     R2-1 -0.051 0.062 0.063 0.063 0.072 0.095 0.124 0.180 0.281 0.518 0.769 1.046 1.081 1.157 1.319
+                     R2-2 -0.046 0.002 0.005 0.008 0.023 0.038 0.070 0.134 0.246 0.443 0.780 1.024 1.028 1.114 1.349
+                     R2-3 -0.051 0.062 0.064 0.069 0.076 0.101 0.138 0.203 0.337 0.545 0.868 1.048 1.060 1.145 1.294
+                
+                library(tidyr)
+                data_long <- gather(old_data, time, OD600, X0h:X100h, factor_key = TRUE)
+                # The arguments to gather():
+                # - data: Data object
+                # - key: Name of new key column (made from names of data columns)
+                # - value: Name of new value column
+                # - ...: Names of source columns that contain values
+                # - factor_key: Treat the new key column as a factor (instead of character vector)
+                head(data_long)
+                     X time  OD600
+                     CK-1  X0h  0.000
+                     CK-2  X0h -0.006
+                     CK-3  X0h -0.002
+                     R2-1  X0h -0.051
+                     R2-2  X0h -0.046
+                     R2-3  X0h -0.051
+                     
+                
