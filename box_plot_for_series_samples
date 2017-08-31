@@ -1,0 +1,16 @@
+#sample file
+width.length sample
+0.5099    Col
+0.6263    Col
+0.6872    Col
+0.5667    Col
+0.5000    Col
+0.6333    Col
+
+#plot
+ggplot(wl, aes(x=sample, y=width.length, fill=sample)) + #use ggplot2 plot,clarify the x-aix and y-axis, color filled for sample
+geom_boxplot(position=position_dodge(1)) #plot box plot #let their position seperate
++ theme_bw() #change them
++theme(axis.text.x  = element_text(face = "bold",angle=30, vjust=0.5), panel.grid =element_blank()) #change axis.x bold,amgle, change no panel 
++ scale_x_discrete(limits=c("Col", "Col D", "bin2-1","bin2-1 D","bin2-3","bin2-3 D","bil1 bil2", "bil1 bil2 D", "bin2-3 bil1 bil2", "bin2-3 bil1 bil2 D", "drip1-1", "drip1-1 D", "drip2-1", "drip2-1 D", "drip1 drip2", "drip1 drip2 D", "ws-1", "ws-1 D", "Myc-BIN2 OE (ws-1)", "Myc-BIN2 OE (ws-1) D"))
+#re_arrange the x axis marker to a list
